@@ -16,7 +16,8 @@ public class JettyServer {
 
     public static void execute() {
         try {
-            String sqlSelect = "SELECT * FROM user";
+            // connection
+            String sqlSelect = "Select * from user";
             try (Connection con = C3p0DataSource.getConnection();
                  Statement st = con.createStatement();
                  ResultSet rs = st.executeQuery(sqlSelect);) {
@@ -59,7 +60,6 @@ public class JettyServer {
         server.start();
         server.join();
     }
-
 //    public static Connection getConnection(String dbURL, String userName,
 //                                           String password) {
 //        Connection conn = null;
